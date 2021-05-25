@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DS_FURNAS_DW">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=CORP1039\RPTCORP;Initial Catalog=Furnas_DW</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>ae52090e-e8d3-4b84-b438-263b30d591fc</DataSourceID>
+</RptDataSource>

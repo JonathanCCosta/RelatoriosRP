@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!MESANO_REF.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>= RIGHT(Fields!MESANO_REF.Value, 4) +  LEFT(Fields!MESANO_REF.Value, 2)</Value>
+                </SortExpression>
+              </SortExpressions>
+              <Label>=Fields!MESANO_REF.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>Realizado</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>ANEEL</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label>Reprogramação</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="Realizado">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Realizado.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style>
+                    <Color>MidnightBlue</Color>
+                  </Style>
+                  <ChartMarker>
+                    <Type>Circle</Type>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Subtype>Smooth</Subtype>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="ANEEL">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!ANEEL.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style>
+                    <Border>
+                      <Width>1.5pt</Width>
+                    </Border>
+                    <Color>Orange</Color>
+                  </Style>
+                  <ChartMarker>
+                    <Type>Circle</Type>
+                    <Size>4pt</Size>
+                    <Style>
+                      <Color>Peru</Color>
+                    </Style>
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Subtype>Smooth</Subtype>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="Reprogramação">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!Reprogramação.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Type>Circle</Type>
+                    <Size>6pt</Size>
+                    <Style>
+                      <Border>
+                        <Color>Aqua</Color>
+                      </Border>
+                      <Color>#00ffffff</Color>
+                    </Style>
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Subtype>Smooth</Subtype>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <Border>
+                    <Color>MidnightBlue</Color>
+                  </Border>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>MidnightBlue</Color>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>MidnightBlue</Color>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>3</Interval>
+                <IntervalType>Default</IntervalType>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Angle>-30</Angle>
+                <AllowLabelRotation>Rotate30</AllowLabelRotation>
+                <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                <HideEndLabels>true</HideEndLabels>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Título do Eixo</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <Border>
+                    <Color>MidnightBlue</Color>
+                  </Border>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>MidnightBlue</Color>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>%</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>MidnightBlue</Color>
+                  </Style>
+                  <TextOrientation>Horizontal</TextOrientation>
+                </ChartAxisTitle>
+                <Interval>20</Interval>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>0</Minimum>
+                <Maximum>100</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Título do Eixo</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <ChartAxisScaleBreak>
+                  <Style />
+                </ChartAxisScaleBreak>
+              </ChartAxis>
+            </ChartValueAxes>
+            <Style>
+              <Border>
+                <Color>MidnightBlue</Color>
+              </Border>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>calibri</FontFamily>
+              <FontSize>8pt</FontSize>
+              <Color>DarkBlue</Color>
+            </Style>
+            <Position>BottomCenter</Position>
+            <DockOutsideChartArea>true</DockOutsideChartArea>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Curva de Avanço Físico</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+              <Color>MidnightBlue</Color>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>BrightPastel</Palette>
+        <ChartBorderSkin>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>Não Há Dados Disponíveis</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>DataSet5X</DataSetName>
+        <Top>2cm</Top>
+        <Left>2.81542cm</Left>
+        <Height>8cm</Height>
+        <Width>19cm</Width>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>GRÁFICO AVANÇO FÍSICO</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>CALIbri</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>por COMPLEXO</Value>
+                <Style>
+                  <FontFamily>tahoma</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.67662cm</Top>
+        <Left>2.81542cm</Left>
+        <Height>1.02333cm</Height>
+        <Width>19cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>11.13507cm</Height>
+    <Style />
+  </Body>
+  <Width>24.33084cm</Width>
+  <Page>
+    <PageHeight>21cm</PageHeight>
+    <PageWidth>29.7cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>0.635cm</TopMargin>
+    <BottomMargin>0.635cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DS_FURNAS_DW</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>181a0171-674c-40cf-8a6c-da9a8a294d4b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet5">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SPE">
+            <Value>=Parameters!SPE.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        CASE WHEN AAA.ID_SPE IS NULL THEN SPEId_REAL ELSE AAA.ID_SPE END AS SPEId, CASE WHEN AAA.ID_SPE IS NULL 
+                         THEN MESANO_REF_REAL ELSE MESANO_REF END AS MESANO_REF, CASE WHEN [ANEEL] IS NULL THEN 0 ELSE [ANEEL] * 100 END AS ANEEL, 
+                         CASE WHEN [Reprogramação] IS NULL THEN 0 ELSE [Reprogramação] * 100 END AS Reprogramação, CASE WHEN [Realizado] IS NULL 
+                         THEN 0 ELSE [Realizado] * 100 END AS Realizado
+FROM            sis_spe.SPE AS CCC LEFT OUTER JOIN
+                             (SELECT        ID_SPE, MESANO_REF, SUM(ANEEL * PESO_OBRA) / SUM(PESO_OBRA) AS ANEEL, SUM(REPROGRAMACAO * PESO_OBRA) / SUM(PESO_OBRA) 
+                                                         AS Reprogramação
+                               FROM            (SELECT        B.ID_SPE, A.ID_OBRA AS OBRAId, A.PESO_OBRA, C.ANEEL, C.REPROGRAMACAO, C.DT_BASE, RIGHT('00' + CAST(MONTH(C.DT_BASE) 
+                                                                                   AS VARCHAR), 2) + '/' + CAST(YEAR(C.DT_BASE) AS VARCHAR) AS MESANO_REF
+                                                         FROM            sis_spe.AVANCO_FISICO AS C LEFT OUTER JOIN
+                                                                                   sis_spe.OBRA AS A ON A.ID_OBRA = C.ID_OBRA LEFT OUTER JOIN
+                                                                                   sis_spe.EMPREENDIMENTO AS B ON A.ID_EMPREENDIMENTO = B.ID_EMPREENDIMENTO
+                                                         WHERE        (A.PESO_OBRA &lt;&gt; 0)) AS AAAA
+                               WHERE        (MESANO_REF IS NOT NULL)
+                               GROUP BY ID_SPE, MESANO_REF) AS AAA ON CCC.ID_SPE = AAA.ID_SPE FULL OUTER JOIN
+                             (SELECT        ID_SPE AS SPEId_REAL, MESANO_REF AS MESANO_REF_REAL, SUM(REALIZADO * PESO_OBRA) / SUM(PESO_OBRA) AS Realizado
+                               FROM            (SELECT        B.ID_SPE, A.ID_OBRA AS OBRAId, A.PESO_OBRA, C.REALIZADO, C.DT_REFERENCIA, RIGHT('00' + CAST(MONTH(C.DT_REFERENCIA) 
+                                                                                   AS VARCHAR), 2) + '/' + CAST(YEAR(C.DT_REFERENCIA) AS VARCHAR) AS MESANO_REF
+                                                         FROM            sis_spe.ACOMPANHAMENTO_OBRA AS C LEFT OUTER JOIN
+                                                                                   sis_spe.OBRA AS A ON A.ID_OBRA = C.ID_OBRA LEFT OUTER JOIN
+                                                                                   sis_spe.EMPREENDIMENTO AS B ON A.ID_EMPREENDIMENTO = B.ID_EMPREENDIMENTO
+                                                         WHERE        (A.PESO_OBRA &lt;&gt; 0)) AS AAAA_1
+                               WHERE        (MESANO_REF IS NOT NULL)
+                               GROUP BY ID_SPE, MESANO_REF) AS BBB ON AAA.MESANO_REF = BBB.MESANO_REF_REAL AND AAA.ID_SPE = BBB.SPEId_REAL
+WHERE        (CCC.MESTRE = 1) AND (AAA.ID_SPE IN (@SPE)) AND (AAA.ANEEL &lt;&gt; 0) OR
+                         (CCC.MESTRE = 1) AND (AAA.ID_SPE IN (@SPE)) AND (AAA.Reprogramação &lt;&gt; 0) OR
+                         (CCC.MESTRE = 1) AND (AAA.ID_SPE IN (@SPE)) AND (BBB.Realizado &lt;&gt; 0)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SPEId">
+          <DataField>SPEId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MESANO_REF">
+          <DataField>MESANO_REF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANEEL">
+          <DataField>ANEEL</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Reprogramação">
+          <DataField>Reprogramação</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Realizado">
+          <DataField>Realizado</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet7">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Complexos">
+            <Value>=Parameters!Complexos.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        ID_SPE AS SPEId
+FROM            sis_spe.SPE
+WHERE        (ID_COMPLEXO = @Complexos)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SPEId">
+          <DataField>SPEId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet5X">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Complexos">
+            <Value>=Parameters!Complexos.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        AAA.ID_COMPLEXO, AAA.MESANO_REF, CASE WHEN [ANEEL] IS NULL THEN 0 ELSE [ANEEL] * 100 END AS ANEEL, CASE WHEN [Reprogramação] IS NULL 
+                         THEN 0 ELSE [Reprogramação] * 100 END AS Reprogramação, CASE WHEN [Realizado] IS NULL THEN 0 ELSE [Realizado] * 100 END AS Realizado
+FROM            sis_spe.SPE AS CCC LEFT OUTER JOIN
+                             (SELECT        ID_COMPLEXO, MESANO_REF, SUM(ANEEL * PESO_OBRA) / SUM(PESO_OBRA) AS ANEEL, SUM(REPROGRAMACAO * PESO_OBRA) / SUM(PESO_OBRA) AS Reprogramação
+                               FROM            (SELECT        D.ID_COMPLEXO, A.PESO_OBRA, C.ANEEL, C.REPROGRAMACAO, C.DT_BASE, RIGHT('00' + CAST(MONTH(C.DT_BASE) AS VARCHAR), 2) + '/' + CAST(YEAR(C.DT_BASE) AS VARCHAR) 
+                                                                                   AS MESANO_REF
+                                                         FROM            sis_spe.AVANCO_FISICO AS C LEFT OUTER JOIN
+                                                                                   sis_spe.OBRA AS A ON A.ID_OBRA = C.ID_OBRA LEFT OUTER JOIN
+                                                                                   sis_spe.EMPREENDIMENTO AS B ON A.ID_EMPREENDIMENTO = B.ID_EMPREENDIMENTO LEFT OUTER JOIN
+                                                                                   sis_spe.SPE AS D ON D.ID_SPE = B.ID_SPE
+                                                         WHERE        (A.PESO_OBRA &lt;&gt; 0) AND (D.ID_COMPLEXO = @Complexos)) AS AAAA
+                               WHERE        (MESANO_REF IS NOT NULL)
+                               GROUP BY ID_COMPLEXO, MESANO_REF) AS AAA ON CCC.ID_COMPLEXO = AAA.ID_COMPLEXO FULL OUTER JOIN
+                             (SELECT        ID_COMPLEXO, MESANO_REF AS MESANO_REF_REAL, SUM(REALIZADO * PESO_OBRA) / SUM(PESO_OBRA) AS Realizado
+                               FROM            (SELECT        D.ID_COMPLEXO, A.PESO_OBRA, C.REALIZADO, C.DT_REFERENCIA, RIGHT('00' + CAST(MONTH(C.DT_REFERENCIA) AS VARCHAR), 2) + '/' + CAST(YEAR(C.DT_REFERENCIA) 
+                                                                                   AS VARCHAR) AS MESANO_REF
+                                                         FROM            sis_spe.ACOMPANHAMENTO_OBRA AS C LEFT OUTER JOIN
+                                                                                   sis_spe.OBRA AS A ON A.ID_OBRA = C.ID_OBRA LEFT OUTER JOIN
+                                                                                   sis_spe.EMPREENDIMENTO AS B ON A.ID_EMPREENDIMENTO = B.ID_EMPREENDIMENTO LEFT OUTER JOIN
+                                                                                   sis_spe.SPE AS D ON D.ID_SPE = B.ID_SPE
+                                                         WHERE        (A.PESO_OBRA &lt;&gt; 0) AND (D.ID_COMPLEXO = @Complexos)) AS AAAA_1
+                               WHERE        (MESANO_REF IS NOT NULL)
+                               GROUP BY ID_COMPLEXO, MESANO_REF) AS BBB ON AAA.MESANO_REF = BBB.MESANO_REF_REAL AND AAA.ID_COMPLEXO = BBB.ID_COMPLEXO
+WHERE        (AAA.ANEEL &lt;&gt; 0) AND (AAA.Reprogramação &lt;&gt; 0) AND (BBB.Realizado &lt;&gt; 0)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID_COMPLEXO">
+          <DataField>ID_COMPLEXO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MESANO_REF">
+          <DataField>MESANO_REF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANEEL">
+          <DataField>ANEEL</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Reprogramação">
+          <DataField>Reprogramação</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Realizado">
+          <DataField>Realizado</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Complexos">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>10</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Complexos</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SPE">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSet7</DataSetName>
+          <ValueField>SPEId</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>SPE</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataSet7</DataSetName>
+          <ValueField>SPEId</ValueField>
+          <LabelField>SPEId</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>5bfff32a-9c4a-49f9-9b5f-b3314bf96b4c</rd:ReportID>
+</Report>

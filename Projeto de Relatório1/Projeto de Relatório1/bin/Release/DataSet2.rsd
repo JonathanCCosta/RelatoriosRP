@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <Description />
+  <DataSet Name="DataSet2">
+    <Query>
+      <DataSourceReference>DS_FURNAS_DW</DataSourceReference>
+      <CommandText>SELECT DISTINCT NIVEIS_FC.TITULO_NIVEL1, NIVEIS_FC.TITULO_NIVEL2, NIVEIS_FC.TITULO_NIVEL3, AAA.DT_REFERENCIA, AAA.VALOR
+FROM            (SELECT        FLUXO_CX.ID_FLUXO_CAIXA, FLUXO_CX.ID_SPE, FLUXO_CX.TP_FLUXO_CAIXA, FLUXO_CX.TITULO, FLUXO_CX.ANO, FLUXO_CX.TRIMESTRE, FLUXO_CX.DT_REFERENCIA, 
+                                                    ITEM_FC.ID_FLUXO_CAIXA AS 'fciTEM', ITEM_FC.ID_ITEM_FC, ITEM_FC.ID_NIVEL1_FC, CASE WHEN ITEM_FC.[ID_NIVEL2_FC] IS NULL THEN 0 ELSE ITEM_FC.[ID_NIVEL2_FC] END AS ID_NIVEL2_FC,
+                                                     CASE WHEN ITEM_FC.[ID_NIVEL3_FC] IS NULL THEN 0 ELSE ITEM_FC.[ID_NIVEL3_FC] END AS ID_NIVEL3_FC, ITEM_FC.VALOR
+                          FROM            sis_spe.FLUXO_DE_CAIXA AS FLUXO_CX LEFT OUTER JOIN
+                                                    sis_spe.ITEM_FC AS ITEM_FC ON FLUXO_CX.ID_FLUXO_CAIXA = ITEM_FC.ID_FLUXO_CAIXA) AS AAA LEFT OUTER JOIN
+                             (SELECT        ID_NIVEL1_FC, TITULO_NIVEL1, 0 AS ID_NIVEL2_FC, NULL AS TITULO_NIVEL2, 0 AS ID_NIVEL3_FC, NULL AS TITULO_NIVEL3, ORDEM AS N1_ORDEM, NULL AS N2_ORDEM, NULL 
+                                                         AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1
+                               UNION
+                               SELECT        N1.ID_NIVEL1_FC, N1.TITULO_NIVEL1, N2.ID_NIVEL2_FC, N2.TITULO_NIVEL2, 0 AS ID_NIVEL3_FC, NULL AS TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, NULL 
+                                                        AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1 LEFT OUTER JOIN
+                                                        sis_spe.NIVEL2_FC AS N2 ON N1.ID_NIVEL1_FC = N2.ID_NIVEL1_FC
+                               WHERE        (N2.ID_NIVEL2_FC IS NOT NULL)
+                               UNION
+                               SELECT        N1.ID_NIVEL1_FC, N1.TITULO_NIVEL1, N2.ID_NIVEL2_FC, N2.TITULO_NIVEL2, N3.ID_NIVEL3_FC, N3.TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, 
+                                                        N3.ORDEM AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1 LEFT OUTER JOIN
+                                                        sis_spe.NIVEL2_FC AS N2 ON N1.ID_NIVEL1_FC = N2.ID_NIVEL1_FC LEFT OUTER JOIN
+                                                        sis_spe.NIVEL3_FC AS N3 ON N2.ID_NIVEL2_FC = N3.ID_NIVEL2_FC
+                               WHERE        (N2.ID_NIVEL2_FC IS NOT NULL) AND (N3.ID_NIVEL3_FC IS NOT NULL)) AS NIVEIS_FC ON NIVEIS_FC.ID_NIVEL1_FC = AAA.ID_NIVEL1_FC AND NIVEIS_FC.ID_NIVEL2_FC = AAA.ID_NIVEL2_FC AND 
+                         NIVEIS_FC.ID_NIVEL3_FC = AAA.ID_NIVEL3_FC
+WHERE        (AAA.ID_SPE = @SPE)
+ORDER BY AAA.ID_SPE, AAA.ID_FLUXO_CAIXA, AAA.ID_ITEM_FC, NIVEIS_FC.N1_ORDEM, NIVEIS_FC.N2_ORDEM, NIVEIS_FC.N3_ORDEM</CommandText>
+    </Query>
+  </DataSet>
+</SharedDataSet>

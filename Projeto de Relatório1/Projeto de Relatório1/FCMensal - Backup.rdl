@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DS_FURNAS_DW">
+      <rd:DataSourceID>b91a8203-3a8f-4ff8-bdae-203cd7ad0d19</rd:DataSourceID>
+      <DataSourceReference>DS_FURNAS_DW</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>f59f5c5c-1f10-4621-9b73-b9530f5e9c12</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>0.78in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>FCMensal</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <Matrix Name="matrix1">
+        <Top>0.36in</Top>
+        <RowGroupings>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_TITULO_NIVEL1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TITULO_NIVEL1.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!TITULO_NIVEL1.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="TITULO_NIVEL1">
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>TITULO_NIVEL1</rd:DefaultName>
+                  <Value>=Fields!TITULO_NIVEL1.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_TITULO_NIVEL2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TITULO_NIVEL2.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!TITULO_NIVEL2.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="TITULO_NIVEL2">
+                  <Style>
+                    <Color>White</Color>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <BackgroundColor>SlateGray</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>TITULO_NIVEL2</rd:DefaultName>
+                  <Value>=Fields!TITULO_NIVEL2.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+          <RowGrouping>
+            <DynamicRows>
+              <Grouping Name="matrix1_TITULO_NIVEL3">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TITULO_NIVEL3.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!TITULO_NIVEL3.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="TITULO_NIVEL3">
+                  <Style>
+                    <Color>White</Color>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <BackgroundColor>#8fa0b0</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>TITULO_NIVEL3</rd:DefaultName>
+                  <Value>=Fields!TITULO_NIVEL3.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicRows>
+            <Width>1in</Width>
+          </RowGrouping>
+        </RowGroupings>
+        <MatrixRows>
+          <MatrixRow>
+            <MatrixCells>
+              <MatrixCell>
+                <ReportItems>
+                  <Textbox Name="textbox2">
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <BorderStyle>
+                        <Default>Solid</Default>
+                      </BorderStyle>
+                      <BorderColor>
+                        <Default>LightGrey</Default>
+                      </BorderColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                    <rd:DefaultName>textbox2</rd:DefaultName>
+                    <Value>=Sum(Fields!VALOR.Value)</Value>
+                    <CanGrow>true</CanGrow>
+                    <Height>0.21in</Height>
+                    <Width>1in</Width>
+                  </Textbox>
+                </ReportItems>
+              </MatrixCell>
+            </MatrixCells>
+            <Height>0.21in</Height>
+          </MatrixRow>
+        </MatrixRows>
+        <Corner>
+          <ReportItems>
+            <Textbox Name="textbox3">
+              <Style>
+                <FontFamily>Tahoma</FontFamily>
+                <FontSize>10pt</FontSize>
+                <BorderStyle>
+                  <Default>Solid</Default>
+                </BorderStyle>
+                <BorderColor>
+                  <Default>LightGrey</Default>
+                </BorderColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+              <rd:DefaultName>textbox3</rd:DefaultName>
+              <Value>
+              </Value>
+              <CanGrow>true</CanGrow>
+              <Height>0.21in</Height>
+            </Textbox>
+          </ReportItems>
+        </Corner>
+        <DataSetName>DataSet1</DataSetName>
+        <MatrixColumns>
+          <MatrixColumn>
+            <Width>1in</Width>
+          </MatrixColumn>
+        </MatrixColumns>
+        <ColumnGroupings>
+          <ColumnGrouping>
+            <DynamicColumns>
+              <Grouping Name="matrix1_DT_REFERENCIA">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DT_REFERENCIA.Value</GroupExpression>
+                </GroupExpressions>
+              </Grouping>
+              <Sorting>
+                <SortBy>
+                  <SortExpression>=Fields!DT_REFERENCIA.Value</SortExpression>
+                </SortBy>
+              </Sorting>
+              <ReportItems>
+                <Textbox Name="DT_REFERENCIA">
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>White</Color>
+                    <BackgroundColor>#6e9eca</BackgroundColor>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>DT_REFERENCIA</rd:DefaultName>
+                  <Value>=Fields!DT_REFERENCIA.Value</Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                  <Width>1in</Width>
+                </Textbox>
+              </ReportItems>
+            </DynamicColumns>
+            <Height>0.21in</Height>
+          </ColumnGrouping>
+        </ColumnGroupings>
+      </Matrix>
+    </ReportItems>
+  </Body>
+  <Language>en-US</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="ID_FLUXO_CAIXA">
+          <DataField>ID_FLUXO_CAIXA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_SPE">
+          <DataField>ID_SPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TITULO">
+          <DataField>TITULO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANO">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TRIMESTRE">
+          <DataField>TRIMESTRE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DT_REFERENCIA">
+          <DataField>DT_REFERENCIA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="ID_ITEM_FC">
+          <DataField>ID_ITEM_FC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_NIVEL1_FC">
+          <DataField>ID_NIVEL1_FC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_NIVEL2_FC">
+          <DataField>ID_NIVEL2_FC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_NIVEL3_FC">
+          <DataField>ID_NIVEL3_FC</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VALOR">
+          <DataField>VALOR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL1">
+          <DataField>TITULO_NIVEL1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL2">
+          <DataField>TITULO_NIVEL2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL3">
+          <DataField>TITULO_NIVEL3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="N1_ORDEM">
+          <DataField>N1_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="N2_ORDEM">
+          <DataField>N2_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="N3_ORDEM">
+          <DataField>N3_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DS_FURNAS_DW</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT DISTINCT 
+                         AAA.ID_FLUXO_CAIXA, AAA.ID_SPE, AAA.TITULO, AAA.ANO, AAA.TRIMESTRE, AAA.DT_REFERENCIA, AAA.ID_ITEM_FC, AAA.ID_NIVEL1_FC, AAA.ID_NIVEL2_FC, AAA.ID_NIVEL3_FC, 
+                         NIVEIS_FC.ID_NIVEL3_FC AS Expr1, AAA.VALOR, NIVEIS_FC.TITULO_NIVEL1, NIVEIS_FC.TITULO_NIVEL2, NIVEIS_FC.TITULO_NIVEL3, NIVEIS_FC.N1_ORDEM, NIVEIS_FC.N2_ORDEM, 
+                         NIVEIS_FC.N3_ORDEM
+FROM            (SELECT        FLUXO_CX.ID_FLUXO_CAIXA, FLUXO_CX.ID_SPE, FLUXO_CX.TP_FLUXO_CAIXA, FLUXO_CX.TITULO, FLUXO_CX.ANO, FLUXO_CX.TRIMESTRE, FLUXO_CX.DT_REFERENCIA, 
+                                                    ITEM_FC.ID_FLUXO_CAIXA AS 'fciTEM', ITEM_FC.ID_ITEM_FC, ITEM_FC.ID_NIVEL1_FC, CASE WHEN ITEM_FC.[ID_NIVEL2_FC] IS NULL THEN 0 ELSE ITEM_FC.[ID_NIVEL2_FC] END AS ID_NIVEL2_FC,
+                                                     CASE WHEN ITEM_FC.[ID_NIVEL3_FC] IS NULL THEN 0 ELSE ITEM_FC.[ID_NIVEL3_FC] END AS ID_NIVEL3_FC, ITEM_FC.VALOR
+                          FROM            sis_spe.FLUXO_DE_CAIXA AS FLUXO_CX LEFT OUTER JOIN
+                                                    sis_spe.ITEM_FC AS ITEM_FC ON FLUXO_CX.ID_FLUXO_CAIXA = ITEM_FC.ID_FLUXO_CAIXA) AS AAA LEFT OUTER JOIN
+                             (SELECT        ID_NIVEL1_FC, TITULO_NIVEL1, 0 AS ID_NIVEL2_FC, NULL AS TITULO_NIVEL2, 0 AS ID_NIVEL3_FC, NULL AS TITULO_NIVEL3, ORDEM AS N1_ORDEM, NULL AS N2_ORDEM, NULL 
+                                                         AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1
+                               UNION
+                               SELECT        N1.ID_NIVEL1_FC, N1.TITULO_NIVEL1, N2.ID_NIVEL2_FC, N2.TITULO_NIVEL2, 0 AS ID_NIVEL3_FC, NULL AS TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, NULL 
+                                                        AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1 LEFT OUTER JOIN
+                                                        sis_spe.NIVEL2_FC AS N2 ON N1.ID_NIVEL1_FC = N2.ID_NIVEL1_FC
+                               WHERE        (N2.ID_NIVEL2_FC IS NOT NULL)
+                               UNION
+                               SELECT        N1.ID_NIVEL1_FC, N1.TITULO_NIVEL1, N2.ID_NIVEL2_FC, N2.TITULO_NIVEL2, N3.ID_NIVEL3_FC, N3.TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, 
+                                                        N3.ORDEM AS N3_ORDEM
+                               FROM            sis_spe.NIVEL1_FC AS N1 LEFT OUTER JOIN
+                                                        sis_spe.NIVEL2_FC AS N2 ON N1.ID_NIVEL1_FC = N2.ID_NIVEL1_FC LEFT OUTER JOIN
+                                                        sis_spe.NIVEL3_FC AS N3 ON N2.ID_NIVEL2_FC = N3.ID_NIVEL2_FC
+                               WHERE        (N2.ID_NIVEL2_FC IS NOT NULL) AND (N3.ID_NIVEL3_FC IS NOT NULL)) AS NIVEIS_FC ON NIVEIS_FC.ID_NIVEL1_FC = AAA.ID_NIVEL1_FC AND NIVEIS_FC.ID_NIVEL2_FC = AAA.ID_NIVEL2_FC AND 
+                         NIVEIS_FC.ID_NIVEL3_FC = AAA.ID_NIVEL3_FC
+WHERE        (YEAR(AAA.DT_REFERENCIA) = @Ano) AND (AAA.ID_SPE = @SPE)
+ORDER BY AAA.ID_SPE, AAA.ID_FLUXO_CAIXA, AAA.ID_ITEM_FC, NIVEIS_FC.N1_ORDEM, NIVEIS_FC.N2_ORDEM, NIVEIS_FC.N3_ORDEM</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Ano">
+            <Value>=Parameters!Ano.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SPE">
+            <Value>=Parameters!SPE.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Ano">
+      <DataType>String</DataType>
+      <Prompt>Ano</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SPE">
+      <DataType>String</DataType>
+      <Prompt>SPE</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

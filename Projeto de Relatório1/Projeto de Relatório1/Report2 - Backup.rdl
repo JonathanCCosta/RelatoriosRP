@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:DataSourceID>8c07fbf7-69f9-44cf-886a-00c4bc5bd18d</rd:DataSourceID>
+      <DataSourceReference>DataSource1</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <rd:ReportID>e52ca205-96f4-4652-bb67-728cc8e43270</rd:ReportID>
+  <Width>5in</Width>
+  <Body>
+    <Height>1.28in</Height>
+    <ColumnSpacing>0.5in</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>20pt</FontSize>
+          <Color>SteelBlue</Color>
+          <FontWeight>Bold</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Value>Report2</Value>
+        <CanGrow>true</CanGrow>
+        <Height>0.36in</Height>
+      </Textbox>
+      <List Name="List1">
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>14pt</FontSize>
+          <Color>SlateGray</Color>
+        </Style>
+        <ReportItems>
+          <Textbox Name="SPEId">
+            <Style>
+              <FontFamily>Tahoma</FontFamily>
+              <FontSize>14pt</FontSize>
+              <Color>SlateGray</Color>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <rd:DefaultName>SPEId</rd:DefaultName>
+            <Value>=Fields!SPEId.Value</Value>
+            <CanGrow>true</CanGrow>
+            <Height>0.27in</Height>
+          </Textbox>
+          <Matrix Name="matrix1">
+            <Top>0.5in</Top>
+            <RowGroupings>
+              <RowGrouping>
+                <DynamicRows>
+                  <Grouping Name="matrix1_Nível1DREId">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Nível1DREId.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Sorting>
+                    <SortBy>
+                      <SortExpression>=Fields!Nível1DREId.Value</SortExpression>
+                    </SortBy>
+                  </Sorting>
+                  <ReportItems>
+                    <Textbox Name="Nível1DREId">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BackgroundColor>#6e9eca</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>Nível1DREId</rd:DefaultName>
+                      <Value>=Fields!Nível1DREId.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </DynamicRows>
+                <Width>1in</Width>
+              </RowGrouping>
+            </RowGroupings>
+            <MatrixRows>
+              <MatrixRow>
+                <MatrixCells>
+                  <MatrixCell>
+                    <ReportItems>
+                      <Textbox Name="textbox2">
+                        <Style>
+                          <FontFamily>Tahoma</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <BorderStyle>
+                            <Default>Solid</Default>
+                          </BorderStyle>
+                          <BorderColor>
+                            <Default>LightGrey</Default>
+                          </BorderColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                        <rd:DefaultName>textbox2</rd:DefaultName>
+                        <Value>=Sum(Fields!VALOR.Value)</Value>
+                        <CanGrow>true</CanGrow>
+                        <Height>0.21in</Height>
+                        <Width>1in</Width>
+                      </Textbox>
+                    </ReportItems>
+                  </MatrixCell>
+                </MatrixCells>
+                <Height>0.21in</Height>
+              </MatrixRow>
+            </MatrixRows>
+            <Corner>
+              <ReportItems>
+                <Textbox Name="textbox3">
+                  <Style>
+                    <FontFamily>Tahoma</FontFamily>
+                    <FontSize>10pt</FontSize>
+                    <BorderStyle>
+                      <Default>Solid</Default>
+                    </BorderStyle>
+                    <BorderColor>
+                      <Default>LightGrey</Default>
+                    </BorderColor>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                  <rd:DefaultName>textbox3</rd:DefaultName>
+                  <Value>
+                  </Value>
+                  <CanGrow>true</CanGrow>
+                  <Height>0.21in</Height>
+                </Textbox>
+              </ReportItems>
+            </Corner>
+            <DataSetName>DataSet1</DataSetName>
+            <MatrixColumns>
+              <MatrixColumn>
+                <Width>1in</Width>
+              </MatrixColumn>
+            </MatrixColumns>
+            <ColumnGroupings>
+              <ColumnGrouping>
+                <DynamicColumns>
+                  <Grouping Name="matrix1_TRIMESTRE">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!TRIMESTRE.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Grouping>
+                  <Sorting>
+                    <SortBy>
+                      <SortExpression>=Fields!TRIMESTRE.Value</SortExpression>
+                    </SortBy>
+                  </Sorting>
+                  <ReportItems>
+                    <Textbox Name="TRIMESTRE">
+                      <Style>
+                        <FontFamily>Tahoma</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>White</Color>
+                        <BackgroundColor>#6e9eca</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <rd:DefaultName>TRIMESTRE</rd:DefaultName>
+                      <Value>=Fields!TRIMESTRE.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Height>0.21in</Height>
+                      <Width>1in</Width>
+                    </Textbox>
+                  </ReportItems>
+                </DynamicColumns>
+                <Height>0.21in</Height>
+              </ColumnGrouping>
+            </ColumnGroupings>
+          </Matrix>
+        </ReportItems>
+        <Grouping Name="list1_SPEId">
+          <GroupExpressions>
+            <GroupExpression>=Fields!SPEId.Value</GroupExpression>
+          </GroupExpressions>
+          <PageBreakAtEnd>true</PageBreakAtEnd>
+        </Grouping>
+        <Sorting>
+          <SortBy>
+            <SortExpression>=Fields!SPEId.Value</SortExpression>
+          </SortBy>
+        </Sorting>
+        <Top>0.36in</Top>
+        <DataSetName>DataSet1</DataSetName>
+      </List>
+    </ReportItems>
+  </Body>
+  <Language>pt-BR</Language>
+  <LeftMargin>1in</LeftMargin>
+  <RightMargin>1in</RightMargin>
+  <TopMargin>1in</TopMargin>
+  <BottomMargin>1in</BottomMargin>
+  <PageWidth>8.5in</PageWidth>
+  <PageHeight>11in</PageHeight>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="SPEId">
+          <DataField>SPEId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TRIMESTRE">
+          <DataField>TRIMESTRE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nível1DREId">
+          <DataField>Nível1DREId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VALOR">
+          <DataField>VALOR</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>Text</CommandType>
+        <CommandText>SELECT        SPEId, TRIMESTRE, Nível1DREId, SUM(VALOR) AS VALOR
+FROM            (SELECT        A.SPEId, A.Ano, A.TrimestreValue, CAST(A.Ano AS VARCHAR) + 'T4' AS TRIMESTRE, 
+                                                    CASE [Nível1DREId] WHEN 1 THEN 'Receita Bruta' WHEN 2 THEN 'Receita Líquida' WHEN 7 THEN 'Lucro Líquido' WHEN 9 THEN 'Custos' WHEN 10 THEN
+                                                     'Despesas Operacionais' WHEN 13 THEN 'Impostos e deduções sobre a Receita' WHEN 16 THEN 'EBITDA' ELSE 'XXXX' END AS Nível1DREId, 
+                                                    B.DREId, B.Valor AS VALOR
+                          FROM            SPE_E_DRE AS A LEFT OUTER JOIN
+                                                    SPE_E_ITEMDRE AS B ON A.ID = B.DREId
+                          WHERE        (A.Ano &lt; YEAR(GETDATE())) AND (B.Nível1DREId IN (1, 2, 7, 9, 10, 13, 16)) AND (B.Nível2DREId IS NULL)
+                          UNION
+                          SELECT        A.SPEId, A.Ano, A.TrimestreValue, CAST(A.Ano AS VARCHAR) + 'T' + CAST(A.TrimestreValue AS CHAR) AS TRIMESTRE, 
+                                                   CASE [Nível1DREId] WHEN 1 THEN 'Receita Bruta' WHEN 2 THEN 'Receita Líquida' WHEN 7 THEN 'Lucro Líquido' WHEN 9 THEN 'Custos' WHEN 10 THEN
+                                                    'Despesas Operacionais' WHEN 13 THEN 'Impostos e deduções sobre a Receita' WHEN 16 THEN 'EBITDA' ELSE 'XXXX' END AS Nível1DREId, 
+                                                   B.DREId, B.Valor AS VALOR
+                          FROM            SPE_E_DRE AS A LEFT OUTER JOIN
+                                                   SPE_E_ITEMDRE AS B ON A.ID = B.DREId
+                          WHERE        (A.Ano &gt;= YEAR(GETDATE())) AND (B.Nível1DREId IN (1, 2, 7, 9, 10, 13, 16)) AND (B.Nível2DREId IS NULL)
+                          UNION
+                          SELECT        A.SPEId, A.Ano, A.TrimestreValue, CAST(A.Ano AS VARCHAR) + 'T4' AS TRIMESTRE, 
+                                                   CASE [Nível1DREId] WHEN 9 THEN 'Depreciação Custos' WHEN 10 THEN 'Depreciação Despesas' ELSE 'XXXX' END AS Nível1DREId, B.DREId, 
+                                                   B.Valor AS VALOR
+                          FROM            SPE_E_DRE AS A LEFT OUTER JOIN
+                                                   SPE_E_ITEMDRE AS B ON A.ID = B.DREId
+                          WHERE        (A.Ano &lt; YEAR(GETDATE())) AND (B.Nível1DREId = 9) AND (B.Nível2DREId = 17) OR
+                                                   (A.Ano &lt; YEAR(GETDATE())) AND (B.Nível1DREId = 10) AND (B.Nível2DREId = 21)
+                          UNION
+                          SELECT        A.SPEId, A.Ano, A.TrimestreValue, CAST(A.Ano AS VARCHAR) + 'T' + CAST(A.TrimestreValue AS CHAR) AS TRIMESTRE, 
+                                                   CASE [Nível1DREId] WHEN 9 THEN 'Depreciação Custos' WHEN 10 THEN 'Depreciação Despesas' ELSE 'XXXX' END AS Nível1DREId, B.DREId, 
+                                                   B.Valor AS VALOR
+                          FROM            SPE_E_DRE AS A LEFT OUTER JOIN
+                                                   SPE_E_ITEMDRE AS B ON A.ID = B.DREId
+                          WHERE        (A.Ano &gt;= YEAR(GETDATE())) AND (B.Nível1DREId = 9) AND (B.Nível2DREId = 17) OR
+                                                   (A.Ano &gt;= YEAR(GETDATE())) AND (B.Nível1DREId = 10) AND (B.Nível2DREId = 21)) AS AAAA
+GROUP BY SPEId, TRIMESTRE, Nível1DREId</CommandText>
+        <Timeout>0</Timeout>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

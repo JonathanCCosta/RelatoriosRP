@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Relatório - Balanço Patrimonial</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>SteelBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.35701cm</Top>
+        <Left>0.3175cm</Left>
+        <Height>0.36in</Height>
+        <Width>5.26042in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Tablix Name="matrix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="textbox3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>textbox3</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <ColSpan>3</ColSpan>
+                </CellContents>
+              </TablixCornerCell>
+              <TablixCornerCell />
+              <TablixCornerCell />
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.26042in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.21in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(Fields!VALOR.Value, Fields!VALOR.Value, "0.00")</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <Format>n2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_DT_REF">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DT_REF.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!ANO.Value</Value>
+                </SortExpression>
+                <SortExpression>
+                  <Value>=Fields!TRIMESTRE.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>0.21in</Size>
+                <CellContents>
+                  <Textbox Name="DT_REF">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!DT_REF.Value</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>DT_REF</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="matrix1_TITULO_NIVEL1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!TITULO_NIVEL1.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!N1_ORDEM.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixHeader>
+                <Size>1.54166in</Size>
+                <CellContents>
+                  <Textbox Name="TITULO_NIVEL1">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!TITULO_NIVEL1.Value</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>9pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>TITULO_NIVEL1</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <BackgroundColor>#6e9eca</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="matrix1_TITULO_NIVEL2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!TITULO_NIVEL2.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!N2_ORDEM.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1.35417in</Size>
+                    <CellContents>
+                      <Textbox Name="TITULO_NIVEL2">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!TITULO_NIVEL2.Value</Value>
+                                <Style>
+                                  <FontFamily>Tahoma</FontFamily>
+                                  <FontSize>9pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>TITULO_NIVEL2</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>SlateGray</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="matrix1_TITULO_NIVEL3">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!TITULO_NIVEL3.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!N3_ORDEM.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixHeader>
+                        <Size>2.36459in</Size>
+                        <CellContents>
+                          <Textbox Name="TITULO_NIVEL3">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!TITULO_NIVEL3.Value</Value>
+                                    <Style>
+                                      <FontFamily>Tahoma</FontFamily>
+                                      <FontSize>9pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Color>White</Color>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style />
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>TITULO_NIVEL3</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>LightGrey</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>#8fa0b0</BackgroundColor>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                  <DataElementOutput>Output</DataElementOutput>
+                </TablixMember>
+              </TablixMembers>
+              <DataElementOutput>Output</DataElementOutput>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>1.32167in</Top>
+        <Left>0.3175cm</Left>
+        <Height>0.42in</Height>
+        <Width>6.52084in</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Tablix>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nome da SPE: </Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NM_SPE.Value, "DataSet2")</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.66076in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>5.76041in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ano:</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.92813in</Top>
+        <Left>2.42708in</Left>
+        <Height>0.23611in</Height>
+        <Width>0.39583in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Ano.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.93854in</Top>
+        <Left>2.8368in</Left>
+        <Height>0.2257in</Height>
+        <Width>0.68055in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Tipo:</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.93854in</Top>
+        <Left>0.125in</Left>
+        <Height>0.25in</Height>
+        <Width>0.41666in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!Tipo.Value</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.93854in</Top>
+        <Left>0.54166in</Left>
+        <Height>0.25in</Height>
+        <Width>1.20138in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.35625in</Height>
+    <Style />
+  </Body>
+  <Width>7.42708in</Width>
+  <Page>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>0in</InteractiveHeight>
+    <InteractiveWidth>11in</InteractiveWidth>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DS_FURNAS_DW">
+      <DataSourceReference>DS_FURNAS_DW</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>021f5f44-1464-4ece-b4fc-95cecf7683c3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DS_FURNAS_DW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Ano">
+            <Value>=Parameters!Ano.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Tipo">
+            <Value>=Parameters!Tipo.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SPE">
+            <Value>=Parameters!SPE.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT ID_SPE, F.ID_BALANCO_PATRIMONIAL, ANO, TP_BALANCO_PATRIMONIAL, TRIMESTRE, 
+	CAST(ANO AS VARCHAR) + '/' + CAST(TRIMESTRE AS VARCHAR) AS DT_REF
+	, TITULO_NIVEL1, TITULO_NIVEL2, TITULO_NIVEL3
+	, N1_ORDEM, N2_ORDEM, N3_ORDEM, C.VALOR FROM (
+	SELECT DISTINCT ID_SPE, A.ID_BALANCO_PATRIMONIAL, ANO, TP_BALANCO_PATRIMONIAL, TRIMESTRE
+		, B.[ID_NIVEL1_BP], B.[ID_NIVEL2_DRE], B.[ID_NIVEL3_DRE]
+		, B.TITULO_NIVEL1, B.TITULO_NIVEL2, B.TITULO_NIVEL3
+		, N1_ORDEM, N2_ORDEM, N3_ORDEM
+	FROM
+		(SELECT ID_NIVEL1_BP, TITULO_NIVEL1, NULL AS ID_NIVEL2_DRE, NULL AS TITULO_NIVEL2
+			, NULL AS ID_NIVEL3_DRE, NULL AS TITULO_NIVEL3, ORDEM AS N1_ORDEM, NULL AS N2_ORDEM, NULL AS N3_ORDEM
+		FROM sis_spe.NIVEL1_BP AS N1
+		UNION
+		SELECT N1.ID_NIVEL1_BP, N1.TITULO_NIVEL1, N2.ID_NIVEL2_BP, N2.TITULO_NIVEL2, NULL AS ID_NIVEL3_DRE
+			, NULL AS TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, NULL AS N3_ORDEM
+		FROM sis_spe.NIVEL1_BP AS N1
+			LEFT OUTER JOIN sis_spe.NIVEL2_BP AS N2 ON N1.ID_NIVEL1_BP = N2.ID_NIVEL1_BP
+		WHERE (N2.ID_NIVEL2_BP IS NOT NULL)
+		UNION
+		SELECT N1.ID_NIVEL1_BP, N1.TITULO_NIVEL1, N2.ID_NIVEL2_BP, N2.TITULO_NIVEL2, N3.ID_NIVEL3_BP
+			, N3.TITULO_NIVEL3, N1.ORDEM AS N1_ORDEM, N2.ORDEM AS N2_ORDEM, N3.ORDEM AS N3_ORDEM
+		FROM sis_spe.NIVEL1_BP AS N1
+		LEFT OUTER JOIN sis_spe.NIVEL2_BP AS N2 ON N1.ID_NIVEL1_BP = N2.ID_NIVEL1_BP
+		LEFT OUTER JOIN sis_spe.NIVEL3_BP AS N3 ON N2.ID_NIVEL2_BP = N3.ID_NIVEL2_BP
+		WHERE (N2.ID_NIVEL2_BP IS NOT NULL) AND (N3.ID_NIVEL3_BP IS NOT NULL)
+		) B
+	, [sis_spe].[BALANCO_PATRIMONIAL] A ) F
+left join [sis_spe].[ITEM_BP] C on C.ID_BALANCO_PATRIMONIAL = F.ID_BALANCO_PATRIMONIAL AND C.ID_NIVEL1_BP = F.ID_NIVEL1_BP
+AND (case when C.ID_NIVEL2_BP IS NULL then 0 else C.ID_NIVEL2_BP end) = (case when F.ID_NIVEL2_DRE IS NULL then 0 else F.ID_NIVEL2_DRE end)
+AND (case when C.ID_NIVEL3_BP IS NULL then 0 else C.ID_NIVEL3_BP end) = (case when F.ID_NIVEL3_DRE IS NULL then 0 else F.ID_NIVEL3_DRE end)
+WHERE (ANO BETWEEN YEAR(@Ano) AND YEAR(@Ano) + 4) AND (TP_BALANCO_PATRIMONIAL= @Tipo) AND (ID_SPE = @SPE)
+ORDER BY ANO, TRIMESTRE, F.ID_NIVEL1_BP, F.ID_NIVEL2_DRE, F.ID_NIVEL3_DRE</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ID_SPE">
+          <DataField>ID_SPE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ID_BALANCO_PATRIMONIAL">
+          <DataField>ID_BALANCO_PATRIMONIAL</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ANO">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TP_BALANCO_PATRIMONIAL">
+          <DataField>TP_BALANCO_PATRIMONIAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TRIMESTRE">
+          <DataField>TRIMESTRE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DT_REF">
+          <DataField>DT_REF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL1">
+          <DataField>TITULO_NIVEL1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL2">
+          <DataField>TITULO_NIVEL2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TITULO_NIVEL3">
+          <DataField>TITULO_NIVEL3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="N1_ORDEM">
+          <DataField>N1_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="N2_ORDEM">
+          <DataField>N2_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="N3_ORDEM">
+          <DataField>N3_ORDEM</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VALOR">
+          <DataField>VALOR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DS_FURNAS_DW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SPE">
+            <Value>=Parameters!SPE.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        NM_SPE
+FROM            sis_spe.SPE
+WHERE        (ID_SPE = @SPE)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NM_SPE">
+          <DataField>NM_SPE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SPE">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>30</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SPE</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Tipo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Societário</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Tipo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Ano">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2014</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Ano</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>pt-BR</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>d96a2878-abd0-44ed-853e-4ae0de6c06ec</rd:ReportID>
+</Report>

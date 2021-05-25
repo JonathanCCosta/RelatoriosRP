@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=corp1039\rptcorp;Initial Catalog=Furnas_Prototipo</ConnectString>
+    <IntegratedSecurity>true</IntegratedSecurity>
+    <Prompt>Especifique um nome de usuário e senha para a fonte de dados DataSource1</Prompt>
+  </ConnectionProperties>
+  <DataSourceID>548357c5-c7cd-403e-84b8-52f313059537</DataSourceID>
+</RptDataSource>

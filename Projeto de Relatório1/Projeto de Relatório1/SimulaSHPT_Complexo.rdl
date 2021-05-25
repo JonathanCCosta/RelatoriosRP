@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Relatório Executivo Eletrobrás </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>28pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Demonstrações financeiras societárias.</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>28pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Height>1.00917in</Height>
+        <Width>12.04167in</Width>
+        <Style>
+          <BackgroundColor>LightGrey</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Visão Complexo</Value>
+                <Style>
+                  <FontFamily>Tahoma</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <Color>MidnightBlue</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <ActionInfo>
+          <Actions>
+            <Action>
+              <Drillthrough>
+                <ReportName>DemFin_COMPLEXO</ReportName>
+                <Parameters>
+                  <Parameter Name="Complexo">
+                    <Value>=Parameters!Complexo.Value</Value>
+                  </Parameter>
+                </Parameters>
+              </Drillthrough>
+            </Action>
+          </Actions>
+        </ActionInfo>
+        <Top>1.63417in</Top>
+        <Left>3.39584in</Left>
+        <Height>0.52083in</Height>
+        <Width>2.08333in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>AliceBlue</BackgroundColor>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>3.29333in</Height>
+    <Style />
+  </Body>
+  <Width>16.375in</Width>
+  <Page>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>DataSource1</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>233a8fbe-bbae-4f4f-8127-88d03c272f7e</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@empresa">
+            <Value>=Parameters!empresa.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        ID AS COD_COMPLEXO, Sigla
+FROM            SPE_E_COMPLEXO
+WHERE        (ID IN
+                             (SELECT        ID_COMPLEXO
+                               FROM            SPE_E_CONTROLE_ACESSO
+                               WHERE        (CD_EMPRESA = @empresa)))</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="COD_COMPLEXO">
+          <DataField>COD_COMPLEXO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Sigla">
+          <DataField>Sigla</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="empresa">
+      <DataType>String</DataType>
+      <Prompt>empresa</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Complexo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>f_cf</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Complexo:</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataSet2</DataSetName>
+          <ValueField>COD_COMPLEXO</ValueField>
+          <LabelField>Sigla</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>pt-BR</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>237688dc-2b16-4570-9277-703e31cbfa8c</rd:ReportID>
+</Report>
